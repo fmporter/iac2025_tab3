@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Llama 3.1 8B Evaluation</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        position: sticky;
+        font-size: 18px;
+        top: 0;
+        background-color: #f9f9f9;
+        padding: 1em;
+        margin: 0;
+        border-bottom: 1px solid #ccc;
+        z-index: 10;
+    }
+
+    .table-container {
+        max-height: 400px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        background-color: #fff;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    col.question-col {
+        width: 10%;
+    }
+
+    col.rating-col {
+        width: 20%;
+    }
+
+    thead th {
+        position: sticky;
+        top: 0;
+        background-color: #002060;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        border-bottom: 2px solid #ccc;
+    }
+
+    tbody td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        vertical-align: top;
+        text-align: center;
+        word-wrap: break-word;
+    }
+
+
+    /* Rating colors */
+    .rating-1 { background-color: #e57373; color: black; } /* Very Poor - Red */
+    .rating-2 { background-color: #ffb74d; color: black; } /* Poor - Orange */
+    .rating-3 { background-color: #fff176; color: black; } /* Fair - Yellow */
+    .rating-4 { background-color: #66bb6a; color: black; } /* Good - Green */
+    .rating-5 { background-color: #2e7d32; color: black; } /* Excellent - Dark Green */
+  </style>
+</head>
+<body>
+
+<h2>Llama 3.1 8B</h2>
+
+<div class="table-container">
+  <table>
+    <colgroup>
+    <col class="question-col">
+    <col class="rating-col">
+    <col class="rating-col">
+    <col class="rating-col">
+    <col class="rating-col">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Question</th>
+        <th>Base model</th>
+        <th>+ RAG and context</th>
+        <th>+ Template and CoT</th>
+        <th>+ Pop. info</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Begin Rows -->
+      <tr><td>1</td><td class="rating-3">3</td><td class="rating-5">5</td><td class="rating-5">5</td><td class="rating-5">5</td></tr>
+      <tr><td>2</td><td class="rating-1">1</td><td class="rating-4">4</td><td class="rating-5">5</td><td class="rating-5">5</td></tr>
+      <tr><td>3</td><td class="rating-3">3</td><td class="rating-4">4</td><td class="rating-5">5</td><td class="rating-5">5</td></tr>
+      <tr><td>4</td><td class="rating-2">2</td><td class="rating-4">4</td><td class="rating-4">4</td><td class="rating-4">4</td></tr>
+      <tr><td>5</td><td class="rating-2">2</td><td class="rating-4">4</td><td class="rating-3">3</td><td class="rating-5">5</td></tr>
+      <tr><td>6</td><td class="rating-1">1</td><td class="rating-4">4</td><td class="rating-5">5</td><td class="rating-5">5</td></tr>
+      <tr><td>7</td><td class="rating-1">1</td><td class="rating-5">5</td><td class="rating-5">5</td><td class="rating-5">5</td></tr>
+      <tr><td>8</td><td class="rating-1">1</td><td class="rating-5">5</td><td class="rating-5">5</td><td class="rating-5">5</td></tr>
+      <tr><td>9</td><td class="rating-2">2</td><td class="rating-3">3</td><td class="rating-4">4</td><td class="rating-4">4</td></tr>
+      <tr><td>10</td><td class="rating-1">1</td><td class="rating-4">4</td><td class="rating-5">5</td><td class="rating-5">5</td></tr>
+      <tr><td>11</td><td class="rating-1">1</td><td class="rating-5">5</td><td class="rating-4">4</td><td class="rating-5">5</td></tr>
+      <tr><td>12</td><td class="rating-1">1</td><td class="rating-5">5</td><td class="rating-5">5</td><td class="rating-4">4</td></tr>
+      <tr><td>13</td><td class="rating-1">1</td><td class="rating-4">4</td><td class="rating-5">5</td><td class="rating-5">5</td></tr>
+      <tr><td>14</td><td class="rating-1">1</td><td class="rating-5">5</td><td class="rating-5">5</td><td class="rating-5">5</td></tr>
+      <tr><td>15</td><td class="rating-1">1</td><td class="rating-2">2</td><td class="rating-5">5</td><td class="rating-4">4</td></tr>
+      <tr><td>16</td><td class="rating-1">1</td><td class="rating-4">4</td><td class="rating-4">4</td><td class="rating-5">5</td></tr>
+      <tr><td>17</td><td class="rating-1">1</td><td class="rating-4">4</td><td class="rating-4">4</td><td class="rating-4">4</td></tr>
+      <tr><td>18</td><td class="rating-1">1</td><td class="rating-3">3</td><td class="rating-4">4</td><td class="rating-5">5</td></tr>
+      <tr><td>19</td><td class="rating-1">1</td><td class="rating-2">2</td><td class="rating-2">2</td><td class="rating-4">4</td></tr>
+      <tr><td>20</td><td class="rating-1">1</td><td class="rating-2">2</td><td class="rating-3">3</td><td class="rating-3">3</td></tr>
+      <!-- End Rows -->
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
